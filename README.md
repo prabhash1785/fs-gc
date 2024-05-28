@@ -11,8 +11,8 @@ This repository hosts a tool which deletes older files which are past given rete
   -   Note: I built and ran this program using Go version - ```go version go1.22.3 darwin/arm64```
 -   cd to this directory - ```fs-cleaner```
 -   Compile using this command: ```go build fs_cleaner.go```
--   Run this program as follows: ./fs_cleaner
-  - To check the command line flags supported to provide custom location of /data directory and config.json, run ```./fs_cleaner --help```
+-   Run this program as follows: ```./fs_cleaner```
+  - _Note:To check the command line flags supported to provide custom location of /data directory and config.json, run ```./fs_cleaner --help```_
 
 
 **Design Choices:**
