@@ -32,8 +32,8 @@ This repository hosts a tool which deletes older files which are past given rete
 - Delete directories with no files in it. For now, my code leaves directories like month intact even though it doesn't have any files left. I would like to fix it if I spend some more time.
 - Write unit tests.
 - Run linter on code to find and fix linting errors.
-- Use less globals than I have done in this standalone program. This is a single threaded program with no sharing and side effects so globals is ok but still not my preferred way to write  program.
+- Use less globals than I have done in this standalone program. Globals could lead to tricky bugs and hard to test code, plus it can introdude side effects. I would fix these before I run this code in prod.
 - Fix path in my Go module for it to be downloadable.
-- Use logs with levels for more controlled logging.
+- Use logs with fine grained levels for more controlled logging.
 
-**How much time I spent on this assessment** - About 4.5 hours.
+**How much time I spent on this assessment** - About 4.5 hours
