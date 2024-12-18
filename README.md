@@ -6,10 +6,10 @@ This repository hosts a tool which deletes older files which are past given rete
 - This tool looks for files to be deleted under /data directory. This is the default location but if your files are located elsewhere on disc then you can provide custom location of data directory with command line flag ```topLevelDataDirName```. Custom value of topLevelDataDirName must be upto ```data``` dirname, for eg, /Users/ricky/data in my case.
 
 **How to build and run this program:**
-- Clone this repo using this command: ```git clone git@github.com:prabhash1785/fs-cleaner.git```
+- Clone this repo using this command: ```git clone git@github.com:prabhash1785/fs-gc.git```
 - Make sure you have Golang compiler installed on your machine. Check Golang compiler version using this command: ```go version```
   -   Note: I built and ran this program using Go version - ```go version go1.22.3 darwin/arm64```
--   cd to this directory - ```fs-cleaner```
+-   cd to this directory - ```fs-gc```
 -   Compile using this command: ```go build fs_cleaner.go```
 -   Run this program as follows: ```./fs_cleaner```
   - _Note:To check the command line flags supported to provide custom location of /data directory and config.json, run ```./fs_cleaner --help```_
@@ -25,7 +25,7 @@ This repository hosts a tool which deletes older files which are past given rete
 - How to not interfere with other processes: I suggest to run this program as a low priority Linux process so that OS executes this cron as low priority process compared to other processes on machine. I haven't made this code change in this tool but this can be easily set in code to run as low priority process.
 - Also while deleting files and directories, introduce a delay (like a sleep of a few configured seconds) to not cause a huge spike in Disc I/O.
 
-**Things I would do if I had more time:**
+**Things I would do if I spend more time:**
 - Make this tool more efficent and less bursty by doing following:
   - Introduce a configured amount of sleep in seconds between each directory delete to reduce pressure on Disc I/O.
   - Configure this process to run as a low priority Linux process.
@@ -35,5 +35,3 @@ This repository hosts a tool which deletes older files which are past given rete
 - Use less globals than I have done in this standalone program. Globals could lead to tricky bugs and hard to test code, plus it can introdude side effects. I would fix these before I run this code in prod.
 - Fix path in my Go module for it to be downloadable.
 - Use logs with fine grained levels for more controlled logging.
-
-**How much time I spent on this assessment** - About 4.5 hours
